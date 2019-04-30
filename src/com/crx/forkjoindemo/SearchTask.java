@@ -28,7 +28,7 @@ public class SearchTask extends RecursiveTask<List<String>>{
 	protected List<String> compute() {
 		List<String> result=new ArrayList<>();
 		if(!path.isDirectory()){
-//			System.out.println("开始从"+path.getAbsolutePath()+"中查询！");
+//			System.out.println("start search from "+path.getAbsolutePath());
 //			if(path.getName().split("\\.").length>1&&path.getName().split("\\.")[1].equals(fileType)){
 //				boolean flag=search(path);
 //				if(flag){

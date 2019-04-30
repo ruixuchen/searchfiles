@@ -12,13 +12,14 @@ public class Main {
 	public static void main(String[] args) {
 		String type=args[0];
 		String searchString=args[1];
-		System.out.println("开始查询-----------------------------------------------------------------------------------");
+		System.out.println("start searching-----------------------------------------------------------------------------------");
 		long startTime=System.currentTimeMillis();
-		List<String> files=getAllFiles("E:\\中国软件\\核心征管svn代码\\HXZG\\business\\trunk",type,searchString);
+		List<String> files=getAllFiles("F:\\",type,searchString);
 		getAllFiles(files,type,searchString);
 		long endTIme=System.currentTimeMillis();
-		System.out.println("查询用时"+(endTIme-startTime)+"毫秒---------------------------------------------------------");
+		System.out.println("using"+(endTIme-startTime)+"milliseconds---------------------------------------------------------");
 	}
+	
 	private static void wordCount(){
 		String string="ahjkhaaaasadkjfkhjweilsadfhkjlsahdfhklsakjfhlkasdhf";
 		char[] chars=string.toCharArray();
@@ -44,7 +45,7 @@ public class Main {
 	}
 	
 	/**
-	 * 递归遍历一个文件夹的所有文件,获取所有的绝对路径,深度优先遍历的思想
+	 * traversal a file dictionary recursively based on depth-first algorithm and get all the files' absolute path
 	 * @param dic
 	 * @param files
 	 */

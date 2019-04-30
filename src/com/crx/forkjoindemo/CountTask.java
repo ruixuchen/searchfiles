@@ -5,6 +5,12 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.RecursiveTask;
 
+/**
+ * @author chenruixu
+ * @desctiption this is a simple demo for fork/join and it can statistics the
+ * frequency of the character in a specified string.
+ *
+ */
 public class CountTask extends RecursiveTask<Map<Character, Integer>>{
 
 	private static final long serialVersionUID = 1L;

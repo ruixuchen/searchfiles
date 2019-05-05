@@ -37,17 +37,21 @@ public class SearchTask extends RecursiveTask<List<String>>{
 //			}
 			result.add(path.getAbsolutePath());
 		}else{
-			File[] files=path.listFiles();
-			for (File file : files) {
-				SearchTask task=new SearchTask(file, fileType, searchString);
-				invokeAll(task);
-				try {
-					result.addAll(task.get());
-				} catch (InterruptedException | ExecutionException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+			// ignore the hidden files
+			if(!path.getName().contains(".")) {
+				File[] files=path.listFiles();
+				for (File file : files) {
+					SearchTask task=new SearchTask(file, fileType, searchString);
+					invokeAll(task);
+					try {
+						result.addAll(task.get());
+					} catch (InterruptedException | ExecutionException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
-			}	
+			}
+				
 		}
 		return result;
 	}

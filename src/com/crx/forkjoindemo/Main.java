@@ -23,7 +23,7 @@ public class Main {
 	
 	private static void getAllFiles() {
 		ForkJoinPool pool=new ForkJoinPool(10);
-		ProcessFolder processFolder=new ProcessFolder("/Users/chenruixu/Desktop/电子税务局/WWXT/DZSWJ/business/trunk/hdxt/gy/service/src/gov/gt3/hdxt", "java");
+		ProcessFolder processFolder=new ProcessFolder("filepath", "java");
 		pool.execute(processFolder);
 		do {
 			System.out.printf("Main: Active Threads: %d\n",pool.getActiveThreadCount());
